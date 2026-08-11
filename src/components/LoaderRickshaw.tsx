@@ -3,9 +3,10 @@ import type { SVGProps } from 'react'
 const INK = '#1c2430'
 const SKIN = '#d9a878'
 
-function Wheel({ cx, cy, r }: { cx: number; cy: number; r: number }) {
+function Wheel({ cx, cy, r, hitClass }: { cx: number; cy: number; r: number; hitClass?: string }) {
   return (
-    <g className="wheel-spin" style={{ transformOrigin: `${cx}px ${cy}px` }}>
+    <g className={hitClass} style={{ transformBox: 'fill-box', transformOrigin: '50% 100%' }}>
+      <g className="wheel-spin" style={{ transformOrigin: `${cx}px ${cy}px` }}>
       <circle cx={cx} cy={cy} r={r} fill="#20242b" />
       <circle cx={cx} cy={cy} r={r - 6} fill="none" stroke="#3a4048" strokeWidth={3} />
       <circle cx={cx} cy={cy} r={r - 13} fill="#e6e6e6" />
@@ -24,6 +25,7 @@ function Wheel({ cx, cy, r }: { cx: number; cy: number; r: number }) {
           />
         )
       })}
+      </g>
     </g>
   )
 }
@@ -124,11 +126,28 @@ export default function LoaderRickshaw(props: SVGProps<SVGSVGElement>) {
       {/* road */}
       <polygon points="0,230 480,230 480,248 0,248" fill="#3d4148" />
       <polygon points="0,238 480,238 480,246 0,246" fill="#484c54" />
+      {/* bumps + potholes scrolling in sync with the wheels (period = one wheel circumference) */}
+      <g className="road-move" aria-hidden="true">
+        {[0, 163.36, 326.72, 490.08].map(p => (
+          <g key={p}>
+            <path d={`M ${p + 67.5} 230 q 9 -8 18 0 z`} fill="#525861" />
+            <ellipse cx={p + 37.3} cy={239} rx={7} ry={3} fill="#262b30" />
+          </g>
+        ))}
+      </g>
+
+      {/* cold winter fog — drifting banks */}
+      <g aria-hidden="true">
+        <ellipse cx={120} cy={186} rx={200} ry={26} fill="#dce8f2" opacity={0.85} className="fog-drift" />
+        <ellipse cx={360} cy={190} rx={190} ry={24} fill="#e6eef6" opacity={0.75} className="fog-drift" style={{ animationDelay: '-3s' }} />
+        <ellipse cx={200} cy={160} rx={170} ry={26} fill="#e3edf6" opacity={0.5} className="fog-drift" style={{ animationDelay: '-1.5s' }} />
+        <ellipse cx={330} cy={70} rx={150} ry={16} fill="#eef4fa" opacity={0.45} className="fog-drift" style={{ animationDelay: '-5s' }} />
+      </g>
 
       {/* wheels */}
       <g className="truck-bump">
-      <Wheel cx={92} cy={202} r={26} />
-      <Wheel cx={266} cy={202} r={26} />
+      <Wheel cx={92} cy={202} r={26} hitClass="wheel-hit-front" />
+      <Wheel cx={266} cy={202} r={26} hitClass="wheel-hit-rear" />
 
       {/* bed rails + undercarriage */}
       <rect x={108} y={206} width={230} height={10} rx={3} fill={INK} />
@@ -203,6 +222,11 @@ export default function LoaderRickshaw(props: SVGProps<SVGSVGElement>) {
       {/* me hanging off the back */}
       <Person x={310} roofY={92} shirt="#b3552f" shirtShadow="#8a3f1f" isMe />
       </g>
+
+      {/* mist veil in front of the truck */}
+      <ellipse cx={250} cy={180} rx={240} ry={18} fill="#d9e6f1" opacity={0.35} className="fog-drift" style={{ animationDelay: '-2s' }} aria-hidden="true" />
+      {/* faint cold wash over the scene */}
+      <rect width={480} height={260} fill="#8fb0d4" opacity={0.07} aria-hidden="true" />
     </svg>
   )
 }

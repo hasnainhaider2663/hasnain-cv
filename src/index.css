@@ -142,38 +142,80 @@
     to { transform: rotate(-360deg); }
   }
   .wheel-spin {
-    animation: wheel-spin 1.4s linear infinite;
+    animation: wheel-spin 3.2s linear infinite;
+  }
+
+  @keyframes wheel-hit-front {
+    0%, 13%, 18%, 100% { transform: translateY(0px) scale(1, 1); }
+    15% { transform: translateY(-4px) scale(1, 0.8); }
+  }
+  .wheel-hit-front {
+    animation: wheel-hit-front 3.2s ease-in-out infinite;
+    transform-box: fill-box;
+    transform-origin: 50% 100%;
+  }
+
+  @keyframes wheel-hit-rear {
+    0%, 38%, 43%, 100% { transform: translateY(0px) scale(1, 1); }
+    40% { transform: translateY(4px) scale(1, 0.78); }
+  }
+  .wheel-hit-rear {
+    animation: wheel-hit-rear 3.2s ease-in-out infinite;
+    transform-box: fill-box;
+    transform-origin: 50% 100%;
   }
 
   @keyframes truck-bump {
-    0% { transform: translate(0, 0) rotate(0deg); }
-    10% { transform: translate(2px, -6px) rotate(1.2deg); }
-    20% { transform: translate(-2px, 2px) rotate(-1deg); }
-    30% { transform: translate(3px, -4px) rotate(0.6deg); }
-    40% { transform: translate(-3px, 3px) rotate(-1.4deg); }
-    50% { transform: translate(1px, -5px) rotate(1deg); }
-    60% { transform: translate(-2px, 1px) rotate(-0.8deg); }
-    70% { transform: translate(3px, -3px) rotate(1.4deg); }
-    80% { transform: translate(-3px, 2px) rotate(-1deg); }
-    90% { transform: translate(1px, -2px) rotate(0.5deg); }
-    100% { transform: translate(0, 0) rotate(0deg); }
+    /* smooth rolling */
+    0%, 12%, 20%, 36%, 45%, 100% { transform: translate(0, 0) rotate(0deg); }
+    /* front wheel hits the bump at 15%: single compression */
+    13% { transform: translate(0px, -1px) rotate(-0.6deg); }
+    15% { transform: translate(-2px, -5px) rotate(-2.2deg); }
+    18% { transform: translate(0px, 0px) rotate(0deg); }
+    /* rear wheel drops into the pothole at 40%: single compression */
+    38% { transform: translate(0px, 1px) rotate(0.5deg); }
+    40% { transform: translate(2px, 4px) rotate(1.8deg); }
+    43% { transform: translate(0px, 0px) rotate(0deg); }
   }
   .truck-bump {
-    animation: truck-bump 2.6s ease-in-out infinite;
+    animation: truck-bump 3.2s ease-in-out infinite;
     transform-box: fill-box;
     transform-origin: 50% 100%;
   }
 
   @keyframes head-shake {
-    0%, 100% { transform: rotate(0deg); }
-    25% { transform: rotate(6.25deg); }
-    55% { transform: rotate(-5deg); }
-    80% { transform: rotate(2.5deg); }
+    0%, 13%, 24%, 37%, 49%, 100% { transform: rotate(0deg); }
+    16% { transform: rotate(7deg); }
+    19% { transform: rotate(-4.5deg); }
+    22% { transform: rotate(0deg); }
+    41% { transform: rotate(5deg); }
+    44% { transform: rotate(-3deg); }
+    47% { transform: rotate(0deg); }
   }
   .head-shake {
-    animation: head-shake 2.6s ease-in-out infinite;
+    animation: head-shake 3.2s ease-in-out infinite;
     transform-box: fill-box;
     transform-origin: 50% 90%;
+  }
+
+  @keyframes road-move {
+    from { transform: translateX(0); }
+    to { transform: translateX(163.36px); }
+  }
+  .road-move {
+    animation: road-move 3.2s linear infinite;
+  }
+
+  @keyframes fog-drift {
+    0% { transform: translate(-22px, -8px); }
+    30% { transform: translate(2px, 7px); }
+    55% { transform: translate(22px, -5px); }
+    80% { transform: translate(-4px, 9px); }
+    100% { transform: translate(-22px, -8px); }
+  }
+  .fog-drift {
+    animation: fog-drift 3.2s ease-in-out infinite;
+    transform-box: fill-box;
   }
 
   .display-type {
