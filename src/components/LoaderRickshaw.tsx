@@ -59,9 +59,9 @@ function Person({
       <polygon points={`${x + 1},${hipY} ${x + 7},${hipY} ${x + 9},${hipY + 18} ${x + 4},${hipY + 18}`} fill="#26313f" />
       {isMe && (
         <g>
-          <rect x={x + 18} y={headY - 30} width={42} height={20} rx={3} fill="#f3eee4" stroke={INK} strokeWidth={1.5} />
-          <polygon points={`${x + 60} ${headY - 24} ${x + 66} ${headY - 20} ${x + 60} ${headY - 16}`} fill="#f3eee4" stroke={INK} strokeWidth={1.5} />
-          <text x={x + 39} y={headY - 15} fontSize="11" fontWeight="700" fill={INK} fontFamily="ui-sans-serif, sans-serif" textAnchor="middle">
+          <rect x={x + 32} y={headY - 52} width={46} height={20} rx={4} fill="#f3eee4" stroke={INK} strokeWidth={1.5} />
+          <polygon points={`${x + 32} ${headY - 34} ${x + 26} ${headY - 30} ${x + 6} ${headY - 12}`} fill="#f3eee4" stroke={INK} strokeWidth={1.5} />
+          <text x={x + 55} y={headY - 37} fontSize="11" fontWeight="700" fill={INK} fontFamily="ui-sans-serif, sans-serif" textAnchor="middle">
             ME
           </text>
         </g>
@@ -134,6 +134,9 @@ export default function LoaderRickshaw(props: SVGProps<SVGSVGElement>) {
       <polygon points="244,132 274,132 272,150 246,150" fill="#8a6a45" stroke={INK} strokeWidth={1} />
       <polygon points="246,120 254,112 262,120 260,130 248,130" fill={SKIN} />
       <polygon points="246,120 254,112 262,120 258,116" fill="#2b2b2b" />
+
+      {/* bed lower body panel (kills the transparent gap under the cargo) */}
+      <rect x={118} y={160} width={186} height={48} rx={4} fill="#2b3644" stroke={INK} strokeWidth={3} />
 
       {/* cab */}
       <path d="M 52 196 L 52 140 Q 52 126 66 126 L 96 126 L 96 116 Q 96 100 110 96 L 150 96 L 150 196 Z" fill="url(#bodyGrad)" stroke={INK} strokeWidth={4} />

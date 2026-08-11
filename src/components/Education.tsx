@@ -1,37 +1,28 @@
-import { GraduationCap, Languages, MapPin, Terminal } from 'lucide-react'
-import { education, languages, profile } from '../data/cv'
+import { Languages, MapPin, Sparkles } from 'lucide-react'
+import { languages, profile } from '../data/cv'
 import { Reveal, SectionHeading, Pill } from './ui'
 import LoaderRickshaw from './LoaderRickshaw'
 
 export default function Education() {
   return (
     <section id="education" className="section-rule mx-auto max-w-7xl px-5 py-20 sm:px-8 md:py-28">
-      <SectionHeading index="04" label="Education" title="The foundation." />
+      <SectionHeading index="04" label="The little things" title="More than the code." />
 
-      <div className="mt-14 grid gap-8 md:grid-cols-[1.3fr_1fr]">
+      <div className="mt-14">
         <Reveal>
-          <div className="ink-block flex h-full flex-col p-7 sm:p-10">
-            <GraduationCap size={22} strokeWidth={2} className="text-accent" />
-            <p className="mt-5 font-sans text-2xl font-bold tracking-tight">{education.degree}</p>
-            <p className="mt-3 text-base font-medium">{education.school}</p>
-            <p className="mt-1 font-mono text-xs text-muted">{education.period}</p>
-          </div>
-        </Reveal>
-
-        <Reveal delay={0.08}>
           <div className="border-brutal flex h-full flex-col p-7 sm:p-10">
-            <Terminal size={22} strokeWidth={2} className="text-accent" />
+            <Sparkles size={22} strokeWidth={2} className="text-accent" />
             <blockquote className="mt-5 font-display text-3xl leading-tight text-cobalt sm:text-4xl">
-              “Anyone could program computers to do what they wanted.”
+              I sometimes had to hang off a rickshaw taxi to get to university.
             </blockquote>
             <p className="mt-5 text-sm leading-relaxed text-muted">
-              GW-BASIC in 9th grade, Linux soon after, then Computer Science at COMSATS.
+              Islamabad, riding the loader — everyone squeezed inside, one mad lad hanging off the back.
             </p>
 
-            <div className="mt-6 border border-border/20 bg-[#efe8dc] p-4">
-              <LoaderRickshaw className="h-auto w-full max-w-sm" />
-              <p className="mt-3 font-mono text-[11px] leading-relaxed text-[#3a3f45]">
-                Islamabad, riding the loader — everyone squeezed inside, one mad lad hanging off the back. That&apos;s me.
+            <div className="mt-6 border border-border/20 bg-[#efe8dc] p-6 sm:p-8">
+              <LoaderRickshaw className="mx-auto h-auto w-full max-w-2xl" />
+              <p className="mt-4 text-center font-mono text-[11px] leading-relaxed text-[#3a3f45]">
+                That&apos;s me.
               </p>
             </div>
 

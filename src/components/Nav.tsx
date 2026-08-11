@@ -6,7 +6,7 @@ const LINKS = [
   { label: 'Highlights', href: '#highlights' },
   { label: 'Experience', href: '#experience' },
   { label: 'Skills', href: '#skills' },
-  { label: 'Education', href: '#education' },
+  { label: 'Fun Facts', href: '#education' },
   { label: 'Contact', href: '#contact' },
 ]
 
@@ -26,6 +26,13 @@ export default function Nav() {
     sections.forEach(s => observer.observe(s))
     return () => observer.disconnect()
   }, [])
+
+  useEffect(() => {
+    if (!open) return
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setOpen(false) }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [open])
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
