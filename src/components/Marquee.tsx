@@ -1,30 +1,22 @@
-import { Diamond } from 'lucide-react'
-import { marqueeItems } from '../data/cv'
+const statements = [
+  '11 years turning ambiguity into shipped software',
+  'Web · Mobile · Cloud · AI',
+  'Lisbon / Portugal / open to serious problems',
+]
 
-function Row() {
+export default function Marquee() {
   return (
-    <div className="flex w-max flex-shrink-0 items-center">
-      {marqueeItems.map((item) => (
-        <span key={item} className="flex items-center">
-          <span className="whitespace-nowrap px-6 text-sm font-medium uppercase tracking-[0.2em] text-mist transition-colors duration-300 hover:text-fog">
-            {item}
-          </span>
-          <Diamond size={8} className="fill-violet-400/50 text-violet-400/50" aria-hidden />
-        </span>
-      ))}
-    </div>
-  )
-}
-
-export default function Marquee({ reverse = false }: { reverse?: boolean }) {
-  return (
-    <div className="mask-fade-x relative overflow-hidden border-y border-white/10 py-5">
-      <div
-        className="flex w-max animate-marquee"
-        style={reverse ? { animationDirection: 'reverse' } : undefined}
-      >
-        <Row />
-        <Row />
+    <div className="overflow-hidden border-y border-border/20 bg-cobalt py-4 text-bg" aria-hidden="true">
+      <div className="flex w-max animate-marquee">
+        {[...Array(2)].map((_, dupe) => (
+          <div key={dupe} className="flex w-max shrink-0 items-center gap-6 px-6">
+            {statements.map(item => (
+              <span key={item + dupe} className="font-mono text-xs tracking-[0.2em] text-bg/80 uppercase whitespace-nowrap">
+                {item}
+              </span>
+            ))}
+          </div>
+        ))}
       </div>
     </div>
   )

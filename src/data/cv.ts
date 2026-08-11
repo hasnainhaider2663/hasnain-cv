@@ -33,6 +33,10 @@ export const highlights: { title: string; body: string }[] = [
     title: '11 years in web',
     body: 'Expert in Next.js, React, Angular and Node.js with SQL and NoSQL databases across Azure, AWS and Firebase.',
   },
+  {
+    title: 'Can-do, before it was fashionable',
+    body: 'I\'ve always had a can-do attitude — way before AI gave everyone wings. If it ships, I build it.',
+  },
 ]
 
 export type Role = {

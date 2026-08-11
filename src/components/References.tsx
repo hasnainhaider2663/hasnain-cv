@@ -1,73 +1,39 @@
-import { motion, useReducedMotion } from 'framer-motion'
 import { Award, ExternalLink, HeartHandshake } from 'lucide-react'
 import { profile } from '../data/cv'
-import { GlowCard, Reveal, SectionHeading } from './ui'
+import { Reveal, SectionHeading } from './ui'
 
 export default function References() {
-  const reduced = useReducedMotion()
-
   return (
-    <section id="references" className="relative mx-auto max-w-6xl px-6 py-28 md:py-36">
-      <SectionHeading
-        index="05"
-        label="References"
-        title="Straight from the people I've built with."
-      />
+    <section id="references" className="section-rule mx-auto max-w-7xl px-5 py-20 sm:px-8 md:py-28">
+      <SectionHeading index="05" label="References" title="Straight from the people I've built with." />
 
-      <Reveal className="mt-14">
-        <motion.div
-          whileHover={reduced ? undefined : { y: -4 }}
-          transition={{ type: 'spring', stiffness: 320, damping: 24 }}
-          className="group"
-        >
-          <div className="rounded-2xl transition-shadow duration-300 group-hover:shadow-[0_0_90px_-25px_rgba(232,121,249,0.5)]">
-            <a
-              href={profile.upwork}
-              target="_blank"
-              rel="noreferrer"
-              className="block"
-              aria-label="View Hasnain Haider's Upwork profile"
-            >
-              <GlowCard>
-                <div className="flex flex-col items-start justify-between gap-8 sm:flex-row sm:items-center">
-                  <div className="max-w-xl">
-                    <p className="font-display text-xl font-semibold tracking-tight text-fog">
-                      Built together, long term.
-                    </p>
-                    <p className="mt-4 leading-relaxed text-mist">
-                      Most of my work runs on long-term engagements — years, not weeks.
-                      Clients stick around because the code keeps shipping and the
-                      product keeps improving. Further references provided upon request.
-                    </p>
-                    <div className="mt-6 flex flex-wrap gap-2">
-                      <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs font-medium text-mist">
-                        <Award size={13} strokeWidth={2} className="text-indigo-300" />
-                        Excellent track record
-                      </span>
-                      <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs font-medium text-mist">
-                        <HeartHandshake
-                          size={13}
-                          strokeWidth={2}
-                          className="text-fuchsia-300"
-                        />
-                        Long-term engagements
-                      </span>
-                    </div>
-                  </div>
-
-                  <span className="font-display inline-flex shrink-0 items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-5 py-2.5 text-sm font-medium text-fog transition-colors duration-300 group-hover:border-white/25 group-hover:bg-white/[0.08]">
-                    View Upwork profile
-                    <ExternalLink
-                      size={16}
-                      strokeWidth={2}
-                      className="text-gradient text-transparent transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                    />
+      <Reveal delay={0.1} className="mt-14">
+        <a href={profile.upwork} target="_blank" rel="noopener noreferrer" className="block group">
+           <div className="border-brutal border-cobalt bg-cobalt p-7 text-bg transition-colors group-hover:bg-accent group-hover:text-fg sm:p-10">
+            <div className="flex flex-col items-start justify-between gap-8 sm:flex-row sm:items-center">
+              <div className="max-w-xl">
+                <p className="font-sans text-xl font-bold tracking-tight">Built together, long term.</p>
+                <blockquote className="mt-5 font-display text-3xl leading-tight sm:text-4xl">
+                  “Years, not weeks.”
+                </blockquote>
+                <p className="mt-4 leading-relaxed">
+                  Most of my work runs on long-term engagements — years, not weeks. Clients stick around because the code keeps shipping.
+                </p>
+                <div className="mt-5 flex flex-wrap gap-2">
+                  <span className="inline-flex items-center border border-bg/40 px-3 py-1 font-mono text-xs font-medium text-bg">
+                    <Award size={12} className="mr-1 inline" strokeWidth={2} />Excellent track record
+                  </span>
+                  <span className="inline-flex items-center border border-bg/40 px-3 py-1 font-mono text-xs font-medium text-bg">
+                    <HeartHandshake size={12} className="mr-1 inline" strokeWidth={2} />Long-term engagements
                   </span>
                 </div>
-              </GlowCard>
-            </a>
-          </div>
-        </motion.div>
+              </div>
+              <span className="inline-flex shrink-0 items-center gap-2 border border-current px-5 py-2.5 font-mono text-sm font-bold transition-colors group-hover:border-bg group-hover:text-bg">
+                View Upwork <ExternalLink size={14} strokeWidth={2} />
+              </span>
+            </div>
+           </div>
+        </a>
       </Reveal>
     </section>
   )

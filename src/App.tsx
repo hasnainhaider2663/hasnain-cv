@@ -10,7 +10,7 @@ import Footer from './components/Footer'
 
 function App() {
   return (
-    <div className="grain relative min-h-screen overflow-x-clip bg-ink">
+    <div className="relative min-h-screen overflow-x-clip bg-bg">
       <Nav />
       <main>
         <Hero />
