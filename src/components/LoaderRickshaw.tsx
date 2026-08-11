@@ -5,7 +5,7 @@ const SKIN = '#d9a878'
 
 function Wheel({ cx, cy, r }: { cx: number; cy: number; r: number }) {
   return (
-    <g>
+    <g className="wheel-spin" style={{ transformOrigin: `${cx}px ${cy}px` }}>
       <circle cx={cx} cy={cy} r={r} fill="#20242b" />
       <circle cx={cx} cy={cy} r={r - 6} fill="none" stroke="#3a4048" strokeWidth={3} />
       <circle cx={cx} cy={cy} r={r - 13} fill="#e6e6e6" />
@@ -45,23 +45,49 @@ function Person({
   const hipY = headY + 58
   return (
     <g>
-      {/* arms gripping roof */}
-      <polygon points={`${x - 2},${roofY} ${x - 8},${roofY + 6} ${x - 5},${headY + 8} ${x + 2},${headY + 4}`} fill={shirtShadow} />
-      <polygon points={`${x + 2},${roofY} ${x + 9},${roofY + 6} ${x + 6},${headY + 8} ${x - 1},${headY + 4}`} fill={shirtShadow} />
-      {/* head */}
-      <polygon points={`${x - 7},${headY - 4} ${x},${headY - 12} ${x + 7},${headY - 4} ${x + 5},${headY + 6} ${x},${headY + 9} ${x - 5},${headY + 6}`} fill={SKIN} />
-      <polygon points={`${x - 7},${headY - 4} ${x},${headY - 12} ${x + 7},${headY - 4} ${x + 4},${headY - 8}`} fill="#2b2b2b" />
+      {/* left arm gripping the roof */}
+      <line x1={x - 6} y1={headY + 4} x2={x - 11} y2={roofY + 3} stroke={shirtShadow} strokeWidth={5} strokeLinecap="round" />
+      <circle cx={x - 11} cy={roofY + 3} r={3.5} fill={SKIN} stroke={INK} strokeWidth={1.5} />
+      {/* laptop bag — tucked behind the torso, half visible at the belly */}
+      <g transform={`rotate(-8 ${x + 7} ${headY + 34})`}>
+        <rect x={x - 2} y={headY + 32} width={18} height={18} rx={4} fill="#6b4a2f" stroke={INK} strokeWidth={1.5} />
+        <line x1={x - 2} y1={headY + 39} x2={x + 16} y2={headY + 39} stroke={INK} strokeWidth={1.2} />
+        <rect x={x + 5} y={headY + 37} width={7} height={3} rx={1} fill="#ffd500" />
+      </g>
+      {/* legs — standing on the extended floor */}
+      <path d={`M ${x - 3} ${hipY} L ${x - 6} ${hipY + 32}`} fill="none" stroke="#2f3a4a" strokeWidth={6} strokeLinecap="round" />
+      <path d={`M ${x + 3} ${hipY} L ${x + 6} ${hipY + 32}`} fill="none" stroke="#26313f" strokeWidth={6} strokeLinecap="round" />
+      {/* shoes on the floor */}
+      <rect x={x - 10} y={hipY + 27} width={9} height={5} rx={2} fill="#20242b" />
+      <rect x={x + 1} y={hipY + 27} width={9} height={5} rx={2} fill="#20242b" />
       {/* torso */}
-      <polygon points={`${x - 6},${headY + 7} ${x + 6},${headY + 7} ${x + 8},${hipY} ${x - 8},${hipY}`} fill={shirt} />
-      <polygon points={`${x - 6},${headY + 7} ${x},${headY + 7} ${x},${hipY} ${x - 8},${hipY}`} fill={shirtShadow} />
-      {/* legs */}
-      <polygon points={`${x - 7},${hipY} ${x - 1},${hipY} ${x - 4},${hipY + 18} ${x - 9},${hipY + 18}`} fill="#2f3a4a" />
-      <polygon points={`${x + 1},${hipY} ${x + 7},${hipY} ${x + 9},${hipY + 18} ${x + 4},${hipY + 18}`} fill="#26313f" />
+      <path d={`M ${x - 8} ${headY + 8} Q ${x - 9} ${headY + 14} ${x - 7} ${hipY} L ${x + 7} ${hipY} Q ${x + 9} ${headY + 14} ${x + 8} ${headY + 8} Z`} fill={shirt} stroke={INK} strokeWidth={1.5} strokeLinejoin="round" />
+      <path d={`M ${x - 8} ${headY + 8} Q ${x - 9} ${headY + 14} ${x - 7} ${hipY} L ${x} ${hipY} L ${x} ${headY + 8} Z`} fill={shirtShadow} />
+      {/* right arm — over the torso, holding the bag strap */}
+      <line x1={x + 7} y1={headY + 6} x2={x + 6} y2={headY + 30} stroke={shirtShadow} strokeWidth={5} strokeLinecap="round" />
+      <circle cx={x + 6} cy={headY + 30} r={3.5} fill={SKIN} stroke={INK} strokeWidth={1.5} />
+      <path d={`M ${x + 6} ${headY + 32} L ${x + 9} ${headY + 35}`} stroke="#57402a" strokeWidth={3.5} strokeLinecap="round" />
+      {/* head (shakes with the ride) */}
+      <g className="head-shake">
+        <ellipse cx={x} cy={headY - 2} rx={9} ry={10} fill={SKIN} stroke={INK} strokeWidth={2} />
+        {/* hair */}
+        <path d={`M ${x - 9} ${headY - 5} Q ${x - 8} ${headY - 14} ${x} ${headY - 12} Q ${x + 8} ${headY - 11} ${x + 9} ${headY - 5} Q ${x + 6} ${headY - 8} ${x} ${headY - 8} Q ${x - 6} ${headY - 8} ${x - 9} ${headY - 5} Z`} fill="#2b2b2b" />
+        {/* eye + mouth */}
+        <circle cx={x - 2.5} cy={headY - 2} r={1.2} fill={INK} />
+        <circle cx={x + 3} cy={headY - 2} r={1.2} fill={INK} />
+        {/* prescription glasses */}
+        <circle cx={x - 3} cy={headY - 2} r={3.4} fill="rgba(243,238,228,0.35)" stroke={INK} strokeWidth={1.4} />
+        <circle cx={x + 3.5} cy={headY - 2} r={3.4} fill="rgba(243,238,228,0.35)" stroke={INK} strokeWidth={1.4} />
+        <line x1={x - 0.8} y1={headY - 4.8} x2={x + 1.3} y2={headY - 4.8} stroke={INK} strokeWidth={1.4} />
+        <line x1={x - 6.2} y1={headY - 2.6} x2={x - 8.6} y2={headY - 3.4} stroke={INK} strokeWidth={1.4} />
+        <line x1={x + 6.7} y1={headY - 2.6} x2={x + 9} y2={headY - 3.4} stroke={INK} strokeWidth={1.4} />
+        <path d={`M ${x - 2} ${headY + 4.5} Q ${x + 0.5} ${headY + 6.5} ${x + 3} ${headY + 4.5}`} fill="none" stroke={INK} strokeWidth={1.2} strokeLinecap="round" />
+      </g>
       {isMe && (
         <g>
-          <rect x={x + 32} y={headY - 52} width={46} height={20} rx={4} fill="#f3eee4" stroke={INK} strokeWidth={1.5} />
-          <polygon points={`${x + 32} ${headY - 34} ${x + 26} ${headY - 30} ${x + 6} ${headY - 12}`} fill="#f3eee4" stroke={INK} strokeWidth={1.5} />
-          <text x={x + 55} y={headY - 37} fontSize="11" fontWeight="700" fill={INK} fontFamily="ui-sans-serif, sans-serif" textAnchor="middle">
+          <rect x={x + 16} y={headY - 46} width={52} height={22} rx={8} fill="#f3eee4" stroke={INK} strokeWidth={1.5} />
+          <polygon points={`${x + 18} ${headY - 26} ${x + 11} ${headY - 20} ${x + 4} ${headY - 9}`} fill="#f3eee4" stroke={INK} strokeWidth={1.5} />
+          <text x={x + 42} y={headY - 30} fontSize="11" fontWeight="700" fill={INK} fontFamily="ui-sans-serif, sans-serif" textAnchor="middle">
             ME
           </text>
         </g>
@@ -100,6 +126,7 @@ export default function LoaderRickshaw(props: SVGProps<SVGSVGElement>) {
       <polygon points="0,238 480,238 480,246 0,246" fill="#484c54" />
 
       {/* wheels */}
+      <g className="truck-bump">
       <Wheel cx={92} cy={202} r={26} />
       <Wheel cx={266} cy={202} r={26} />
 
@@ -126,27 +153,43 @@ export default function LoaderRickshaw(props: SVGProps<SVGSVGElement>) {
       <polygon points="160,106 200,100 206,102 165,108" fill="#6f3a24" />
       {/* people sitting in the bed (busts above the rail) */}
       <polygon points="148,132 178,132 176,150 150,150" fill="#4f5d7a" stroke={INK} strokeWidth={1} />
-      <polygon points="150,120 158,112 166,120 164,130 152,130" fill={SKIN} />
-      <polygon points="150,120 158,112 166,120 162,116" fill="#2b2b2b" />
+      <g className="head-shake">
+        <polygon points="150,120 158,112 166,120 164,130 152,130" fill={SKIN} />
+        <polygon points="150,120 158,112 166,120 162,116" fill="#2b2b2b" />
+      </g>
       <polygon points="196,132 226,132 224,150 198,150" fill="#5a7a55" stroke={INK} strokeWidth={1} />
-      <polygon points="198,120 206,112 214,120 212,130 200,130" fill={SKIN} />
-      <polygon points="198,120 206,112 214,120 210,116" fill="#2b2b2b" />
+      <g className="head-shake">
+        <polygon points="198,120 206,112 214,120 212,130 200,130" fill={SKIN} />
+        <polygon points="198,120 206,112 214,120 210,116" fill="#2b2b2b" />
+      </g>
       <polygon points="244,132 274,132 272,150 246,150" fill="#8a6a45" stroke={INK} strokeWidth={1} />
-      <polygon points="246,120 254,112 262,120 260,130 248,130" fill={SKIN} />
-      <polygon points="246,120 254,112 262,120 258,116" fill="#2b2b2b" />
+      <g className="head-shake">
+        <polygon points="246,120 254,112 262,120 260,130 248,130" fill={SKIN} />
+        <polygon points="246,120 254,112 262,120 258,116" fill="#2b2b2b" />
+      </g>
 
       {/* bed lower body panel (kills the transparent gap under the cargo) */}
       <rect x={118} y={160} width={186} height={48} rx={4} fill="#2b3644" stroke={INK} strokeWidth={3} />
+
+      {/* extended floor at the back — where I stand */}
+      <rect x={246} y={204} width={92} height={10} rx={3} fill="#2b3644" stroke={INK} strokeWidth={2.5} />
 
       {/* cab */}
       <path d="M 52 196 L 52 140 Q 52 126 66 126 L 96 126 L 96 116 Q 96 100 110 96 L 150 96 L 150 196 Z" fill="url(#bodyGrad)" stroke={INK} strokeWidth={4} />
       {/* windshield */}
       <polygon points="100,104 136,98 136,124 100,124" fill="#a9c4d6" stroke={INK} strokeWidth={2} opacity={0.9} />
       <polygon points="100,104 136,98 136,124 100,124" fill="#6d8aa0" opacity={0.4} />
-      {/* driver */}
-      <polygon points="106,128 128,124 132,138 106,140" fill={SKIN} stroke={INK} strokeWidth={1.5} />
-      <polygon points="104,120 130,116 130,124 104,126" fill="#3a3a3a" />
-      <polygon points="112,128 124,125 130,138 118,142" fill="#4a6b8a" stroke={INK} strokeWidth={1} />
+      {/* driver — head + arms raised to grab the steering wheel, all inside the window */}
+      <path d="M 130 121 L 124 117 L 115.5 109" fill="none" stroke="#4a6b8a" strokeWidth={4} strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M 119 121 L 112 114 L 106.5 109" fill="none" stroke="#4a6b8a" strokeWidth={4} strokeLinecap="round" strokeLinejoin="round" />
+      <ellipse cx={111} cy={113} rx={4.5} ry={8.5} fill="none" stroke="#20242b" strokeWidth={2.5} />
+      <line x1={111} y1={121} x2={111} y2={127} stroke="#20242b" strokeWidth={2.5} />
+      <circle cx={106.5} cy={109} r={2} fill={SKIN} />
+      <circle cx={115.5} cy={109} r={2} fill={SKIN} />
+      <g className="head-shake">
+        <polygon points="133,113 125,105 117,113 119,123 131,123" fill={SKIN} stroke={INK} strokeWidth={1} />
+        <polygon points="133,113 125,105 117,113 121,109" fill="#2b2b2b" />
+      </g>
       {/* headlight + grille */}
       <rect x={56} y={150} width={20} height={12} rx={3} fill="#f2d36b" stroke={INK} strokeWidth={2} />
       <path d="M 58 176 h 30 v 6 h -30 z" fill={INK} />
@@ -159,6 +202,7 @@ export default function LoaderRickshaw(props: SVGProps<SVGSVGElement>) {
 
       {/* me hanging off the back */}
       <Person x={310} roofY={92} shirt="#b3552f" shirtShadow="#8a3f1f" isMe />
+      </g>
     </svg>
   )
 }
