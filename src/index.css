@@ -236,15 +236,6 @@
     opacity: 0.06;
   }
 
-  .blueprint-grid {
-    background-image: radial-gradient(
-      circle,
-      color-mix(in srgb, var(--fg) 26%, transparent) 1px,
-      transparent 1.6px
-    );
-    background-size: 26px 26px;
-  }
-
   .ink-block {
     background: var(--fg);
     color: var(--bg);
