@@ -23,7 +23,7 @@ export default function Footer() {
 
         <Reveal delay={0.12}>
           <p className="mx-auto mt-7 max-w-xl text-center text-base leading-relaxed text-bg/70 sm:text-lg">
-            Have a product, platform, or AI system in mind? I&apos;m always up for building something fast, robust, and a little bit brilliant.
+            Have a product, platform, or system in mind? I&apos;m always up for building something fast, robust, and a little bit brilliant.
           </p>
         </Reveal>
 

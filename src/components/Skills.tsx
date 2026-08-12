@@ -4,13 +4,13 @@ import { skillGroups } from '../data/cv'
 import { Reveal, SectionHeading } from './ui'
 
 const GROUP_ICONS: Record<string, LucideIcon> = {
-  Frontend: Code2, Backend: Server, 'Cloud & Infra': Cloud, Mobile: Smartphone, 'AI / LLM': Sparkles, Additional: Layers,
+  Frontend: Code2, Backend: Server, 'Cloud & Infra': Cloud, Mobile: Smartphone, Additional: Layers,
 }
 
 export default function Skills() {
   return (
     <section id="skills" className="section-rule mx-auto max-w-7xl px-5 py-20 sm:px-8 md:py-28">
-      <SectionHeading index="03" label="Skills" title="A full-stack arsenal." lead="From pixels to Postgres to prompt engineering." />
+      <SectionHeading index="03" label="Skills" title="A full-stack arsenal." lead="From pixels to Postgres — the stack I reach for." />
 
       <div className="mt-14 grid gap-x-8 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
         {skillGroups.map((group, i) => {

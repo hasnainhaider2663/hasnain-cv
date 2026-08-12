@@ -31,7 +31,7 @@ export default function Highlights() {
       <div className="mt-16 grid gap-x-8 gap-y-12 md:grid-cols-12">
         {highlights.map((h, i) => {
           const Icon = icons[i] ?? Cpu
-          const span = i < 2 ? 'md:col-span-6' : 'md:col-span-3'
+            const span = i < 2 ? 'md:col-span-6' : 'md:col-span-4'
           return (
             <Reveal key={h.title} delay={Math.min(i * 0.06, 0.3)} className={span}>
               <div className="section-rule flex h-full flex-col pt-4">

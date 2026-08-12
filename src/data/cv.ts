@@ -9,17 +9,13 @@ export const profile = {
   upwork: 'https://www.upwork.com/freelancers/~01af2bec7f4082f911',
   experienceYears: 11,
   blurb:
-    'Full stack engineer who ships production LLM systems, data-heavy platforms, and mobile apps. Eleven years across Next.js, React, Angular and Node — from startup strategy to enterprise scale.',
+    'Full stack engineer who ships data-heavy platforms and mobile apps. Eleven years across Next.js, React, Angular and Node — from startup strategy to enterprise scale.',
 }
 
 export const highlights: { title: string; body: string }[] = [
   {
-    title: 'Production LLM systems',
-    body: 'Built and evaluated production LLM systems, including a multi-provider routing layer across 20 models and 5 providers.',
-  },
-  {
     title: '30+ data visualizations',
-    body: 'Delivered 30+ production data visualizations for a multi-tenant fintech analytics platform.',
+    body: 'Delivered 30+ data visualizations for a multi-tenant fintech analytics platform.',
   },
   {
     title: 'Tech Lead',
@@ -35,7 +31,7 @@ export const highlights: { title: string; body: string }[] = [
   },
   {
     title: 'Can-do, before it was fashionable',
-    body: 'I\'ve always had a can-do attitude — way before AI gave everyone wings. If it ships, I build it.',
+    body: 'I\'ve always had a can-do attitude — way before it was fashionable. If it ships, I build it.',
   },
 ]
 
@@ -54,10 +50,10 @@ export const roles: Role[] = [
     period: 'Jul 2025 – Present',
     tag: 'Product Engineering',
     points: [
-      'Delivered product engineering across five client engagements — fintech analytics, AI e-commerce, inventory management, healthcare social and proptech. 338 PRs and 435 tickets in 13 months; code reviewer of record on 311 teammate PRs.',
-      'Built a production-bound AI storefront-styling agent (OpenCode SDK) with structured JSON output and multi-provider routing across 20 models and 5 providers; designed the per-session cost instrumentation adopted as the project’s go/no-go business metric.',
+      'Delivered product engineering across five client engagements — fintech analytics, e-commerce, inventory management, healthcare social and proptech. 338 PRs and 435 tickets in 13 months; code reviewer of record on 311 teammate PRs.',
+      'Built a storefront-styling agent (OpenCode SDK) with structured JSON output and multi-provider routing across 20 models and 5 providers; designed the per-session cost instrumentation adopted as the project’s go/no-go business metric.',
       'Ran a controlled six-model evaluation with a financial model projecting a 9.5× cost spread. Recommendations cut projected inference costs by 41% (~$471k/year at scale) while improving latency.',
-      'Delivered 30+ production data visualizations and a dynamic form engine that eliminated custom forms for 90 API endpoints, cutting development time significantly.',
+      'Delivered 30+ data visualizations and a dynamic form engine that eliminated custom forms for 90 API endpoints, cutting development time significantly.',
       'Built backend services in Hono, Drizzle ORM and PostgreSQL with better-auth multi-tenant permissions, S3 file handling and Trigger.dev background ingestion jobs.',
       'Built mobile E2E test infrastructure from scratch (Appium + WebdriverIO, iOS/Android, EAS, CI) on two products and a Playwright suite on a third.',
       'Built a deterministic, reversible anonymization CLI (Python, PyInstaller, cross-platform CI) encrypting personal identifiers across five linked datasets; extracted into a standalone internal tool.',
@@ -210,23 +206,6 @@ export const skillGroups: { name: string; accent: string; skills: string[] }[] =
     skills: ['React Native', 'Expo', 'EAS Build', 'Appium + WebdriverIO'],
   },
   {
-    name: 'AI / LLM',
-    accent: '#fbbf24',
-    skills: [
-      'OpenCode SDK',
-      'OpenRouter',
-      'Multi-model routing (Anthropic, OpenAI, Gemini, Mistral, DeepSeek, Qwen)',
-      'Self-hosted Ollama',
-      'LLM cost instrumentation & benchmarking',
-      'Structured/JSON output design',
-      'Agent guardrails & sandboxing',
-      'LangChain',
-      'LangGraph',
-      'pgvector',
-      'RAG chains & tools',
-    ],
-  },
-  {
     name: 'Additional',
     accent: '#f87171',
     skills: [
@@ -260,11 +239,8 @@ export const marqueeItems = [
   'AWS',
   'Azure',
   'Terraform',
-  'LangChain',
-  'LLM Systems',
   'React Native',
   'GraphQL',
-  'OpenAI',
   'Docker',
   'Redis',
   'Tailwind',

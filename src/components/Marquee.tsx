@@ -1,6 +1,6 @@
 const statements = [
   '11 years turning ambiguity into shipped software',
-  'Web · Mobile · Cloud · AI',
+  'Web · Mobile · Cloud',
   'Lisbon / Portugal / open to serious problems',
 ]
 

@@ -107,7 +107,7 @@ export default function Hero() {
                 <p className="mt-2 text-sm text-muted">years turning ambiguous problems into shipped software.</p>
               </div>
               <div className="border-t border-border/25 pt-4 font-mono text-[10px] leading-relaxed text-muted">
-                WEB / MOBILE / CLOUD / AI
+                WEB / MOBILE / CLOUD
               </div>
             </div>
           </aside>
