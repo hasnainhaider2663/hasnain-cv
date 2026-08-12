@@ -30,8 +30,8 @@ export const highlights: { title: string; body: string }[] = [
     body: 'Expert in Next.js, React, Angular and Node.js with SQL and NoSQL databases across Azure, AWS and Firebase.',
   },
   {
-    title: 'Can-do, before it was fashionable',
-    body: 'I\'ve always had a can-do attitude — way before it was fashionable. If it ships, I build it.',
+    title: 'Can-do attitude',
+    body: 'My biggest asset is my can-do attitude, which I\'ve always had since I got into the field.',
   },
 ]
 

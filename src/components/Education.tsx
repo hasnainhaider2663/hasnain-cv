@@ -20,7 +20,7 @@ export default function Education() {
 
   return (
     <section id="education" className="section-rule mx-auto max-w-7xl px-5 py-20 sm:px-8 md:py-28">
-      <SectionHeading index="04" label="Fun fact" title="Fun fact." />
+      <SectionHeading index="06" label="Fun fact" title="Fun fact." />
 
       <div className="mt-14">
         <Reveal>

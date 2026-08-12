@@ -10,7 +10,7 @@ export default function Footer() {
         <Reveal>
           <div className="text-center">
             <div className="flex items-center justify-center gap-3 font-mono text-xs tracking-[0.25em] uppercase">
-              <span className="text-accent">06</span><span>/</span><span>CONTACT</span>
+              <span className="text-accent">05</span><span>/</span><span>CONTACT</span>
             </div>
           </div>
         </Reveal>

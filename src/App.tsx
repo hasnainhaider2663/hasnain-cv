@@ -4,9 +4,9 @@ import Marquee from './components/Marquee'
 import Highlights from './components/Highlights'
 import Experience from './components/Experience'
 import Skills from './components/Skills'
-import Education from './components/Education'
 import References from './components/References'
 import Footer from './components/Footer'
+import Education from './components/Education'
 
 function App() {
   return (
@@ -18,10 +18,10 @@ function App() {
         <Highlights />
         <Experience />
         <Skills />
-        <Education />
         <References />
       </main>
       <Footer />
+      <Education />
     </div>
   )
 }

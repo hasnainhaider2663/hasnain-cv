@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion'
-import { ArrowDown, Mail } from 'lucide-react'
+import { ArrowDown, Mail, Sparkles } from 'lucide-react'
 import { profile } from '../data/cv'
 import { Reveal, Pill } from './ui'
 import { GitHubIcon, LinkedInIcon } from './brand-icons'
@@ -21,7 +21,7 @@ export default function Hero() {
       <div className="editorial-drift shape-half pointer-events-none absolute bottom-0 right-20 h-24 w-48 bg-cobalt/90" style={{ animationDelay: '-4s' }} aria-hidden />
       <motion.div
         style={{ y: contentY, opacity: contentOpacity }}
-        className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 px-5 py-28 sm:px-8 lg:grid-cols-[92px_minmax(0,1fr)_280px] lg:gap-14 lg:py-36"
+        className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 px-5 py-28 sm:px-8 md:grid-cols-[minmax(0,1fr)_240px] md:gap-10 md:py-32 lg:grid-cols-[92px_minmax(0,1fr)_280px] lg:gap-14 lg:py-36"
       >
         <div className="hidden border-r-2 border-border lg:flex lg:flex-col lg:justify-between lg:pb-3">
           <span className="font-mono text-[10px] tracking-[0.25em] text-muted [writing-mode:vertical-rl]">PORTFOLIO / 2026</span>
@@ -57,7 +57,7 @@ export default function Hero() {
           </Reveal>
 
           <Reveal delay={0.3} y={12}>
-            <div className="mt-10 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-center sm:gap-4 lg:justify-start">
+            <div className="mt-10 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:flex-wrap sm:justify-center sm:gap-4 lg:justify-start">
               <a
                 href="#experience"
                 className="border border-coral bg-coral px-7 py-3 font-mono text-sm font-bold text-fg text-center transition-colors hover:bg-cobalt hover:text-bg sm:w-auto"
@@ -69,6 +69,12 @@ export default function Hero() {
                 className="border border-border/30 bg-surface px-7 py-3 font-mono text-sm font-bold text-fg text-center transition-colors hover:bg-cobalt hover:text-bg sm:w-auto"
               >
                 <Mail size={14} className="mr-1 inline" /> CONTACT ME
+              </a>
+              <a
+                href="#education"
+                className="border border-border/30 px-7 py-3 font-mono text-sm font-bold text-muted text-center transition-colors hover:bg-accent hover:text-fg hover:border-accent sm:w-auto"
+              >
+                <Sparkles size={14} className="mr-1 inline" /> FUN FACT
               </a>
             </div>
           </Reveal>
@@ -94,16 +100,16 @@ export default function Hero() {
           </Reveal>
         </div>
 
-        <Reveal delay={0.2} className="hidden lg:block">
-          <aside className="paper-panel relative mt-24 min-h-[330px] overflow-hidden p-6">
-            <div className="absolute -right-10 -top-10 shape-circle h-36 w-36 bg-sky" aria-hidden />
-            <div className="absolute bottom-8 -left-8 shape-half h-24 w-48 bg-coral" aria-hidden />
+        <Reveal delay={0.2} className="hidden md:block">
+          <aside className="paper-panel relative mt-10 md:mt-12 lg:mt-24 min-h-[260px] md:min-h-[300px] lg:min-h-[330px] overflow-hidden p-5 md:p-6">
+            <div className="absolute -right-8 -top-8 md:-right-10 md:-top-10 shape-circle h-28 w-28 md:h-32 md:w-32 lg:h-36 lg:w-36 bg-sky" aria-hidden />
+            <div className="absolute bottom-6 -left-6 md:bottom-8 md:-left-8 shape-half h-20 w-40 md:h-22 md:w-44 lg:h-24 lg:w-48 bg-coral" aria-hidden />
             <div className="relative flex h-full flex-col justify-between">
               <div className="flex items-center justify-between font-mono text-[10px] tracking-[0.18em] text-muted uppercase">
                 <span>Field notes</span><span>Lisbon / 01</span>
               </div>
               <div>
-                <p className="display-type text-6xl text-cobalt">11+</p>
+                <p className="display-type text-5xl lg:text-6xl text-cobalt">11+</p>
                 <p className="mt-2 text-sm text-muted">years turning ambiguous problems into shipped software.</p>
               </div>
               <div className="border-t border-border/25 pt-4 font-mono text-[10px] leading-relaxed text-muted">
