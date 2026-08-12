@@ -3,7 +3,7 @@ import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion
 import { ArrowDown, Mail, Sparkles } from 'lucide-react'
 import { profile } from '../data/cv'
 import { Reveal, Pill } from './ui'
-import { GitHubIcon, LinkedInIcon } from './brand-icons'
+import { GitHubIcon, LinkedInIcon, UpworkIcon } from './brand-icons'
 
 export default function Hero() {
   const ref = useRef<HTMLElement>(null)
@@ -84,6 +84,7 @@ export default function Hero() {
               {[
                 { href: profile.linkedin, label: 'LinkedIn', Icon: LinkedInIcon },
                 { href: profile.github, label: 'GitHub', Icon: GitHubIcon },
+                { href: profile.upwork, label: 'Upwork', Icon: UpworkIcon },
               ].map(({ href, label, Icon }) => (
                 <a
                   key={label}
