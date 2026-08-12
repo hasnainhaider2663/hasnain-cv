@@ -1,5 +1,23 @@
 [
   {
+    "slug": "altar-agent",
+    "name": "AI Storefront Styling Agent",
+    "tag": "Current · AI",
+    "period": "2025 – Present",
+    "stack": ["OpenCode SDK", "OpenRouter", "Anthropic", "OpenAI", "Gemini"],
+    "link": null,
+    "linkLabel": null
+  },
+  {
+    "slug": "altar-engagements",
+    "name": "Altar.io Engagements",
+    "tag": "Current · Product",
+    "period": "2025 – Present",
+    "stack": ["Hono", "Drizzle", "PostgreSQL", "React Native", "Terraform"],
+    "link": null,
+    "linkLabel": null
+  },
+  {
     "slug": "sabeelee",
     "name": "Sabeelee",
     "tag": "Tech Lead",
