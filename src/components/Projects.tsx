@@ -2,46 +2,63 @@ import { ArrowUpRight } from 'lucide-react'
 import { Pill, Reveal, SectionHeading } from './ui'
 import { projects } from '../data/projects'
 
+const LAYOUT = [
+  { span: 'md:col-span-7', offset: '', tone: 'paper', pad: 'p-6 sm:p-9', num: '01', heading: 'text-2xl sm:text-3xl' },
+  { span: 'md:col-span-5', offset: 'md:mt-24', tone: 'ink', pad: 'p-6 sm:p-8', num: '02', heading: 'text-2xl' },
+  { span: 'md:col-span-5', offset: '', tone: 'paper', pad: 'p-6 sm:p-8', num: '03', heading: 'text-2xl' },
+  { span: 'md:col-span-7', offset: 'md:mt-16', tone: 'cobalt', pad: 'p-7 sm:p-10', num: '04', heading: 'text-2xl sm:text-3xl' },
+  { span: 'md:col-span-12', offset: 'md:mt-20', tone: 'paper', pad: 'p-8 sm:p-12', num: '05', heading: 'text-3xl sm:text-4xl' },
+  { span: 'md:col-span-5', offset: '', tone: 'ink', pad: 'p-6 sm:p-8', num: '06', heading: 'text-2xl' },
+  { span: 'md:col-span-7', offset: 'md:mt-28', tone: 'paper', pad: 'p-6 sm:p-9', num: '07', heading: 'text-2xl sm:text-3xl' },
+]
+
 export default function Projects() {
   return (
     <section id="projects" className="section-rule mx-auto max-w-7xl px-5 py-20 sm:px-8 md:py-28">
       <SectionHeading index="02" label="Projects" title="Things I've built, shipped and scaled." lead="Selected products across community, commerce, streaming and edtech." />
 
-      <div className="mt-16 grid gap-x-8 gap-y-12 md:grid-cols-2">
-        {projects.map((project, i) => (
-          <Reveal key={project.slug} delay={Math.min((i % 2) * 0.08, 0.16)}>
-            <article className="paper-panel flex h-full flex-col p-6 sm:p-8">
-              <div className="flex items-start justify-between gap-4">
-                <div>
-                  <h3 className="font-sans text-2xl font-bold tracking-tight">{project.name}</h3>
-                  <p className="mt-1 font-mono text-xs tracking-wider text-muted">{project.period}</p>
+      <div className="mt-16 grid gap-x-8 gap-y-12 md:grid-cols-12 md:gap-y-0">
+        {projects.map((project, i) => {
+          const layout = LAYOUT[i % LAYOUT.length]
+          const tone = layout.tone
+          const toneClass = tone === 'ink' ? 'ink-block' : tone === 'cobalt' ? 'border-brutal bg-cobalt text-bg' : 'paper-panel'
+
+          return (
+            <Reveal key={project.slug} delay={Math.min(i * 0.05, 0.2)} className={`${layout.span} ${layout.offset}`}>
+              <article className={`${toneClass} flex h-full flex-col ${layout.pad}`}>
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <span className={`font-mono text-xs tracking-[0.2em] ${tone === 'paper' ? 'text-accent' : 'opacity-70'}`}>{layout.num}</span>
+                    <h3 className={`mt-2 font-sans font-bold tracking-tight ${layout.heading}`}>{project.name}</h3>
+                    <p className="mt-1 font-mono text-xs tracking-wider opacity-60">{project.period}</p>
+                  </div>
+                  {project.tag && <Pill accent>{project.tag}</Pill>}
                 </div>
-                {project.tag && <Pill accent>{project.tag}</Pill>}
-              </div>
 
-              <div className="prose-job mt-5 flex-1 text-sm leading-relaxed text-muted" dangerouslySetInnerHTML={{ __html: project.description }} />
+                <div className={`prose-job mt-5 flex-1 text-sm leading-relaxed opacity-90 ${tone === 'paper' ? 'text-muted' : ''}`} dangerouslySetInnerHTML={{ __html: project.description }} />
 
-              <div className="mt-6 flex flex-wrap gap-2">
-                {project.stack.map(tech => (
-                  <span key={tech} className="border px-2.5 py-1 font-mono text-[11px] text-muted">
-                    {tech}
-                  </span>
-                ))}
-              </div>
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {project.stack.map(tech => (
+                    <span key={tech} className={`border px-2.5 py-1 font-mono text-[11px] ${tone === 'paper' ? 'text-muted' : 'opacity-70'}`}>
+                      {tech}
+                    </span>
+                  ))}
+                </div>
 
-              {project.link && (
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-6 inline-flex items-center gap-1.5 font-mono text-xs text-accent hover:underline"
-                >
-                  {project.linkLabel ?? project.link} <ArrowUpRight size={13} strokeWidth={2} />
-                </a>
-              )}
-            </article>
-          </Reveal>
-        ))}
+                {project.link && (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`mt-6 inline-flex items-center gap-1.5 font-mono text-xs text-accent hover:underline`}
+                  >
+                    {project.linkLabel ?? project.link} <ArrowUpRight size={13} strokeWidth={2} />
+                  </a>
+                )}
+              </article>
+            </Reveal>
+          )
+        })}
       </div>
     </section>
   )
