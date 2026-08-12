@@ -41,8 +41,8 @@
     "tag": "QR Marketing",
     "period": "2017 – 2019",
     "stack": ["Angular", "Node.js", "Express", "MongoDB", "AWS"],
-    "link": null,
-    "linkLabel": null
+    "link": "https://www.cybercorporation.com.au/brand-binary/",
+    "linkLabel": "brandbinary"
   },
   {
     "slug": "store-hunch",
