@@ -14,8 +14,8 @@ export const profile = {
 
 export const highlights: { title: string; body: string }[] = [
   {
-    title: '30+ data visualizations',
-    body: 'Delivered 30+ data visualizations for a multi-tenant fintech analytics platform.',
+    title: '338 PRs · 435 tickets in the past year',
+    body: 'Shipped 338 pull requests and completed 435 Jira tickets across five client engagements.',
   },
   {
     title: 'Tech Lead',
