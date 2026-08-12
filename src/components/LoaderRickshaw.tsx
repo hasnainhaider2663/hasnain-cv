@@ -131,7 +131,7 @@ export default function LoaderRickshaw(props: SVGProps<SVGSVGElement>) {
         {[0, 163.36, 326.72, 490.08].map(p => (
           <g key={p}>
             <path d={`M ${p + 67.5} 230 q 9 -8 18 0 z`} fill="#525861" />
-            <ellipse cx={p + 37.3} cy={239} rx={7} ry={3} fill="#262b30" />
+            <ellipse cx={p + 37.3} cy={239} rx={14} ry={6} fill="#262b30" />
           </g>
         ))}
       </g>
