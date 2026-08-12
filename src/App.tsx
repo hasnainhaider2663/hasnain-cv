@@ -20,8 +20,8 @@ function App() {
         <Skills />
         <References />
       </main>
-      <Footer />
       <Education />
+      <Footer />
     </div>
   )
 }
