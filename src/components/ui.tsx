@@ -78,8 +78,8 @@ export function BorderCard({ children, className = '' }: { children: ReactNode; 
 export function Pill({ children, accent = false }: { children: ReactNode; accent?: boolean }) {
   return (
     <span
-      className={`inline-flex items-center border px-3 py-1 font-mono text-xs font-medium ${
-        accent ? 'border-accent bg-accent/10 text-accent' : 'border-border text-muted'
+      className={`inline-flex items-center border px-3 py-1 font-mono text-xs font-bold ${
+        accent ? 'border-accent bg-accent text-fg' : 'border-border text-muted'
       }`}
     >
       {children}
