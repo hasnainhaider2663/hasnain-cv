@@ -31,9 +31,6 @@ export default function Education() {
               <blockquote className="mt-5 font-display text-3xl leading-tight text-cobalt sm:text-4xl">
                 I sometimes had to hang off a rickshaw taxi to get to university.
               </blockquote>
-              <p className="mt-5 text-sm leading-relaxed text-muted">
-                Islamabad, riding the loader — everyone squeezed inside, one mad lad hanging off the back.
-              </p>
 
               <div className="mt-6 border border-border/20 bg-[#efe8dc] p-6 sm:p-8">
                 <LoaderRickshaw className="mx-auto h-auto w-full max-w-2xl" />
