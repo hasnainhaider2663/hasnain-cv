@@ -3,13 +3,13 @@ import { Pill, Reveal, SectionHeading } from './ui'
 import { projects } from '../data/projects'
 
 const LAYOUT = [
-  { span: 'md:col-span-7', start: 'md:col-start-1', offset: '', pad: 'p-6 sm:p-9', num: '01', heading: 'text-2xl sm:text-4xl', tone: 'paper' },
-  { span: 'md:col-span-4', start: 'md:col-start-9', offset: 'md:mt-24', pad: 'p-6 sm:p-7', num: '02', heading: 'text-xl sm:text-2xl', tone: 'ink' },
-  { span: 'md:col-span-3', start: 'md:col-start-1', offset: 'md:mt-20', pad: 'p-6', num: '03', heading: 'text-xl', tone: 'coral' },
-  { span: 'md:col-span-5', start: 'md:col-start-4', offset: 'md:mt-36', pad: 'p-6 sm:p-8', num: '04', heading: 'text-2xl', tone: 'paper' },
-  { span: 'md:col-span-4', start: 'md:col-start-9', offset: 'md:mt-10', pad: 'p-6 sm:p-8', num: '05', heading: 'text-2xl', tone: 'cobalt' },
-  { span: 'md:col-span-6', start: 'md:col-start-1', offset: 'md:mt-16', pad: 'p-7 sm:p-10', num: '06', heading: 'text-2xl sm:text-3xl', tone: 'paper' },
-  { span: 'md:col-span-5', start: 'md:col-start-8', offset: 'md:mt-8', pad: 'p-6 sm:p-9', num: '07', heading: 'text-2xl sm:text-3xl', tone: 'ink' },
+  { cols: 'md:col-span-8', rows: 'md:row-span-2', pad: 'p-7 sm:p-10', num: '01', heading: 'text-2xl sm:text-4xl', tone: 'paper' },
+  { cols: 'md:col-span-4', rows: '', pad: 'p-6', num: '02', heading: 'text-xl sm:text-2xl', tone: 'ink' },
+  { cols: 'md:col-span-4', rows: '', pad: 'p-6', num: '03', heading: 'text-xl sm:text-2xl', tone: 'coral' },
+  { cols: 'md:col-span-5', rows: '', pad: 'p-6 sm:p-8', num: '04', heading: 'text-2xl', tone: 'cobalt' },
+  { cols: 'md:col-span-7', rows: 'md:row-span-2', pad: 'p-7 sm:p-10', num: '05', heading: 'text-2xl sm:text-4xl', tone: 'paper' },
+  { cols: 'md:col-span-5', rows: '', pad: 'p-6 sm:p-8', num: '06', heading: 'text-2xl', tone: 'ink' },
+  { cols: 'md:col-span-4', rows: '', pad: 'p-6', num: '07', heading: 'text-xl sm:text-2xl', tone: 'coral' },
 ]
 
 export default function Projects() {
@@ -17,7 +17,7 @@ export default function Projects() {
     <section id="projects" className="section-rule mx-auto max-w-7xl px-5 py-20 sm:px-8 md:py-28">
       <SectionHeading index="02" label="Projects" title="Things I've built, shipped and scaled." lead="Selected products across community, commerce, streaming and edtech." />
 
-      <div className="mt-20 grid gap-x-8 gap-y-14 md:grid-cols-12">
+      <div className="mt-20 grid gap-6 md:grid-cols-12 md:auto-rows-[minmax(220px,auto)]">
         {projects.map((project, i) => {
           const layout = LAYOUT[i % LAYOUT.length]
           const tone = layout.tone
@@ -25,7 +25,7 @@ export default function Projects() {
             tone === 'ink' ? 'ink-block' : tone === 'cobalt' ? 'border-brutal bg-cobalt text-bg' : tone === 'coral' ? 'border-brutal bg-coral text-fg' : 'paper-panel'
 
           return (
-            <Reveal key={project.slug} delay={Math.min(i * 0.06, 0.25)} className={`${layout.span} ${layout.start} ${layout.offset}`}>
+            <Reveal key={project.slug} delay={Math.min(i * 0.05, 0.2)} className={`${layout.cols} ${layout.rows}`}>
               <article className={`${toneClass} flex h-full flex-col ${layout.pad}`}>
                 <div className="flex items-start justify-between gap-4">
                   <div>
