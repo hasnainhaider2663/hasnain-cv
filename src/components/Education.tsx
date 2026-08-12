@@ -40,35 +40,35 @@ export default function Education() {
       <PerforationRail side="left" />
       <PerforationRail side="right" />
 
-      <div className="mx-auto max-w-6xl px-6 py-24 sm:px-10 md:px-16 md:py-32 lg:py-40">
+      <div className="mx-auto max-w-6xl px-6 py-12 sm:px-10 md:px-16 md:py-16 lg:py-20">
         <Reveal>
           <div className="text-center">
             <span className="font-mono text-[11px] tracking-[0.35em] opacity-60">REEL 06 · FUN FACT · TAKE 01</span>
-            <h2 className="display-type mt-6 text-6xl text-accent sm:text-8xl lg:text-9xl">FUN FACT.</h2>
+            <h2 className="display-type mt-3 text-5xl text-accent sm:text-7xl lg:text-8xl">FUN FACT.</h2>
           </div>
         </Reveal>
 
-        <Reveal delay={0.1} className="mt-14 md:mt-20">
-          <div className="border-brutal paper-panel relative overflow-hidden p-7 sm:p-10 md:p-14">
+        <Reveal delay={0.1} className="mt-8 md:mt-10">
+          <div className="border-brutal paper-panel relative overflow-hidden p-6 sm:p-8 md:p-10">
             <span aria-hidden className="absolute left-4 top-4 font-mono text-[10px] tracking-[0.2em] opacity-50">● REC</span>
             <span aria-hidden className="absolute right-4 top-4 font-mono text-[10px] tracking-[0.2em] opacity-50">SCENE 01</span>
 
             <div className={`transition-[filter,transform] duration-1000 ${revealed ? 'rise-in-imax' : 'pixel-crumble pointer-events-none select-none'}`}>
               <div className="flex flex-col items-center text-center">
-                <Sparkles size={28} strokeWidth={2} className="text-accent" />
-                <blockquote className="mt-6 max-w-4xl font-display text-4xl leading-[1.05] text-cobalt text-balance sm:text-6xl lg:text-7xl">
+                <Sparkles size={24} strokeWidth={2} className="text-accent" />
+                <blockquote className="mt-4 max-w-4xl font-display text-3xl leading-[1.05] text-cobalt text-balance sm:text-5xl lg:text-6xl">
                   &ldquo;I sometimes had to hang off a rickshaw to get to university.&rdquo;
                 </blockquote>
               </div>
 
-              <div className="mx-auto mt-12 max-w-4xl border border-border/20 bg-[#efe8dc] p-6 sm:p-10 md:p-12">
+              <div className="mx-auto mt-8 max-w-4xl border border-border/20 bg-[#efe8dc] p-5 sm:p-7 md:p-8">
                 <LoaderRickshaw className="mx-auto h-auto w-full max-w-3xl" />
-                <p className="mt-5 text-center font-mono text-[11px] tracking-[0.18em] text-[#3a3f45]">
+                <p className="mt-3 text-center font-mono text-[11px] tracking-[0.18em] text-[#3a3f45]">
                   That&apos;s me.
                 </p>
               </div>
 
-              <div className="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 font-mono text-[11px] tracking-[0.2em] text-bg/70">
+              <div className="mt-7 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 font-mono text-[11px] tracking-[0.2em] text-bg/70">
                 <span>ISLAMABAD · COMSATS</span>
                 <span aria-hidden>·</span>
                 <span>LOADER RICKSHAW</span>
