@@ -9,7 +9,7 @@ export const profile = {
   upwork: 'https://www.upwork.com/freelancers/~01af2bec7f4082f911',
   experienceYears: 11,
   blurb:
-    'Full stack engineer who ships data-heavy platforms and mobile apps. Eleven years across Next.js, React, Angular and Node — from startup strategy to enterprise scale.',
+    'Full stack engineer who ships responsive, performant platforms and mobile apps. Eleven years across Next.js, React, Angular and Node — from startup strategy to enterprise scale.',
 }
 
 export const highlights: { title: string; body: string }[] = [
