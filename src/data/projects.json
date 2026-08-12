@@ -1,0 +1,83 @@
+[
+  {
+    "slug": "altar-agent",
+    "name": "AI Storefront Styling Agent",
+    "tag": "Current · AI",
+    "period": "2025 – Present",
+    "stack": ["OpenCode SDK", "OpenRouter", "Anthropic", "OpenAI", "Gemini"],
+    "link": null,
+    "linkLabel": null
+  },
+  {
+    "slug": "altar-engagements",
+    "name": "Altar.io Engagements",
+    "tag": "Current · Product",
+    "period": "2025 – Present",
+    "stack": ["Hono", "Drizzle", "PostgreSQL", "React Native", "Terraform"],
+    "link": null,
+    "linkLabel": null
+  },
+  {
+    "slug": "sabeelee",
+    "name": "Sabeelee",
+    "tag": "Tech Lead",
+    "period": "2023 – 2025",
+    "stack": ["Next.js", "Prisma", "PostgreSQL", "Azure", "Stripe"],
+    "link": "https://www.sabeelee.com",
+    "linkLabel": "sabeelee.com"
+  },
+  {
+    "slug": "herold-at",
+    "name": "Austrian Yellow Pages",
+    "tag": "Enterprise · SEO",
+    "period": "2021 – 2022",
+    "stack": ["Next.js", "React", "GraphQL"],
+    "link": null,
+    "linkLabel": null
+  },
+  {
+    "slug": "radio-flamingo",
+    "name": "Music Streaming SPAs",
+    "tag": "Music Streaming",
+    "period": "2021 – 2022",
+    "stack": ["Angular", "RxJS"],
+    "link": null,
+    "linkLabel": null
+  },
+  {
+    "slug": "avantform",
+    "name": "Avantform",
+    "tag": "Digital Art Licensing",
+    "period": "2019 – 2021",
+    "stack": ["Angular", "TypeScript", "Stripe", "Moneris"],
+    "link": "https://www.avantform.com",
+    "linkLabel": "avantform.com"
+  },
+  {
+    "slug": "brand-binary",
+    "name": "BrandBinary",
+    "tag": "QR Marketing",
+    "period": "2017 – 2019",
+    "stack": ["Angular", "Node.js", "Express", "MongoDB", "AWS"],
+    "link": "https://www.cybercorporation.com.au/brand-binary/",
+    "linkLabel": "brandbinary"
+  },
+  {
+    "slug": "store-hunch",
+    "name": "Store Hunch",
+    "tag": "Co-Founder",
+    "period": "2015 – 2017",
+    "stack": ["Angular", "Node.js", "MongoDB", "Android"],
+    "link": "https://sourceforge.net/projects/storehunch-point-of-sale-free/",
+    "linkLabel": "Point of Sale"
+  },
+  {
+    "slug": "degree-verification",
+    "name": "Degree Verification",
+    "tag": "EdTech",
+    "period": "2017 – 2019",
+    "stack": ["Angular", "Node.js", "MongoDB"],
+    "link": null,
+    "linkLabel": null
+  }
+]

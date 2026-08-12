@@ -287,6 +287,27 @@
     font-family: var(--font-mono);
     font-size: 0.85em;
   }
+
+  .ink-block .prose-job p,
+  .ink-block .prose-job strong,
+  .ink-block .prose-job h2,
+  .ink-block .prose-job li,
+  .bg-cobalt .prose-job p,
+  .bg-cobalt .prose-job strong,
+  .bg-cobalt .prose-job h2,
+  .bg-cobalt .prose-job li {
+    color: var(--bg);
+  }
+
+  .ink-block .prose-job li::marker,
+  .bg-cobalt .prose-job li::marker {
+    color: var(--accent);
+  }
+
+  .ink-block .prose-job code,
+  .bg-cobalt .prose-job code {
+    border-color: var(--bg);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
