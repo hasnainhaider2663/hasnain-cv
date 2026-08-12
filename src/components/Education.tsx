@@ -99,7 +99,7 @@ export default function Education() {
                   aria-label="Reveal a fun fact about me"
                   className="absolute inset-0 flex flex-col items-center justify-center gap-4 text-center"
                 >
-                  <span className="border-2 border-fg bg-bg px-7 py-3.5 font-mono text-sm font-bold tracking-wider uppercase transition-colors hover:bg-accent hover:border-accent hover:text-fg">
+                  <span className="border-2 border-fg bg-bg text-fg px-7 py-3.5 font-mono text-sm font-bold tracking-wider uppercase transition-colors hover:bg-accent hover:border-accent hover:text-fg">
                     <MousePointerClick size={16} className="mr-2 inline" strokeWidth={2} />
                     Click to roll the reel
                   </span>
