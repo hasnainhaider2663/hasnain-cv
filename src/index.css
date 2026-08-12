@@ -146,8 +146,10 @@
   }
 
   @keyframes wheel-hit-front {
-    0%, 13%, 18%, 100% { transform: translateY(0px) scale(1, 1); }
+    /* bump at 15%, pothole at 33.5% */
+    0%, 13%, 18%, 31%, 36%, 100% { transform: translateY(0px) scale(1, 1); }
     15% { transform: translateY(-4px) scale(1, 0.8); }
+    33.5% { transform: translateY(4px) scale(1, 0.78); }
   }
   .wheel-hit-front {
     animation: wheel-hit-front 3.2s ease-in-out infinite;
