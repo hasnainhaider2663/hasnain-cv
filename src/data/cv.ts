@@ -51,8 +51,8 @@ export const roles: Role[] = [
     tag: 'Product Engineering',
     points: [
       'Delivered product engineering across five client engagements — fintech analytics, e-commerce, inventory management, healthcare social and proptech. 338 PRs and 435 tickets in 13 months; code reviewer of record on 311 teammate PRs.',
-      'Built a storefront-styling agent (OpenCode SDK) with structured JSON output and multi-provider routing across 20 models and 5 providers; designed the per-session cost instrumentation adopted as the project’s go/no-go business metric.',
-      'Ran a controlled six-model evaluation with a financial model projecting a 9.5× cost spread. Recommendations cut projected inference costs by 41% (~$471k/year at scale) while improving latency.',
+      'Built a storefront-styling agent (OpenCode SDK) with structured JSON output; designed the per-session cost instrumentation adopted as the project’s go/no-go business metric.',
+      'A controlled model evaluation cut projected inference costs by 41% while improving latency.',
       'Delivered 30+ data visualizations and a dynamic form engine that eliminated custom forms for 90 API endpoints, cutting development time significantly.',
       'Built backend services in Hono, Drizzle ORM and PostgreSQL with better-auth multi-tenant permissions, S3 file handling and Trigger.dev background ingestion jobs.',
       'Built mobile E2E test infrastructure from scratch (Appium + WebdriverIO, iOS/Android, EAS, CI) on two products and a Playwright suite on a third.',
