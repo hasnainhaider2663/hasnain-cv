@@ -7,7 +7,7 @@ const icons: LucideIcon[] = [Cpu, BarChart3, Users, Rocket, Code2]
 export default function Highlights() {
   return (
     <section id="highlights" className="section-rule mx-auto max-w-7xl px-5 py-20 sm:px-8 md:py-28">
-      <SectionHeading index="01" label="Highlights" title="A decade of shipping, a habit of impact." lead="The numbers behind the work." />
+      <SectionHeading index="01" label="Highlights" title="A decade of shipping, a habit of impact." lead="What I bring to the work." />
 
       <div className="mt-16 grid gap-x-8 gap-y-12 md:grid-cols-12">
         {highlights.map((h, i) => {

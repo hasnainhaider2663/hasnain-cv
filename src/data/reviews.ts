@@ -32,10 +32,10 @@ export const reviews: Review[] = [
   {
     quote:
       'Extraordinary professional! It has been an honor to work with Hasnain. He is proficient with front end and backend system implementation with great attention to every detail.',
-    author: '',
-    role: 'Remote Front end developer',
+    author: 'Samuel Bamyoge',
+    role: 'Tech Lead',
     company: 'Avantform',
-    period: 'Jun 2019 – May 2020',
+    period: 'Jun 2019 – Jun 2021',
     source: '',
     rating: null,
   },

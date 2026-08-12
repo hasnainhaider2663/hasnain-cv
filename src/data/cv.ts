@@ -14,8 +14,8 @@ export const profile = {
 
 export const highlights: { title: string; body: string }[] = [
   {
-    title: '338 PRs · 435 tickets in the past year',
-    body: 'Shipped 338 pull requests and completed 435 Jira tickets across five client engagements.',
+    title: '338 PRs · 435 tickets in the last year',
+    body: 'Shipped 338 pull requests and completed 435 tickets in the last year.',
   },
   {
     title: 'Tech Lead',
@@ -26,7 +26,7 @@ export const highlights: { title: string; body: string }[] = [
     body: 'Provided technical leadership and strategy for multiple startups, working directly with leadership.',
   },
   {
-    title: '11 years in web',
+    title: '11 years across web, mobile and backend',
     body: 'Expert in Next.js, React, Angular and Node.js with SQL and NoSQL databases across Azure, AWS and Firebase.',
   },
   {
