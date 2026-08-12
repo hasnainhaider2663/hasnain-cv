@@ -10,21 +10,21 @@
   },
   {
     "slug": "herold-at",
-    "name": "Herold.at",
+    "name": "Austrian Yellow Pages",
     "tag": "Enterprise · SEO",
     "period": "2021 – 2022",
     "stack": ["Next.js", "React", "GraphQL"],
-    "link": "https://www.herold.at",
-    "linkLabel": "herold.at"
+    "link": null,
+    "linkLabel": null
   },
   {
     "slug": "radio-flamingo",
-    "name": "Radio Flamingo & Antenne",
+    "name": "Music Streaming SPAs",
     "tag": "Music Streaming",
     "period": "2021 – 2022",
     "stack": ["Angular", "RxJS"],
-    "link": "https://radioflamingo.at",
-    "linkLabel": "radioflamingo.at"
+    "link": null,
+    "linkLabel": null
   },
   {
     "slug": "avantform",
