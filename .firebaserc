@@ -1,5 +1,13 @@
 {
   "projects": {
     "default": "hasnain-cv"
+  },
+  "targets": {
+    "hasnain-cv": {
+      "hosting": {
+        "production": ["hasnain-cv"],
+        "staging": ["hasnain-cv-staging"]
+      }
+    }
   }
 }

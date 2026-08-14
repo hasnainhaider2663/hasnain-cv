@@ -1,8 +1,8 @@
-name: Deploy to Firebase Hosting
+name: Deploy to Firebase Staging
 
 on:
   push:
-    branches: [main]
+    branches: [staging]
   workflow_dispatch:
 
 jobs:
@@ -21,5 +21,5 @@ jobs:
       - name: Build
         run: bun run build
 
-      - name: Deploy to Firebase Hosting
-        run: npx firebase-tools deploy --only hosting:production --non-interactive --token "${{ secrets.FIREBASE_TOKEN }}"
+      - name: Deploy to Firebase Staging
+        run: npx firebase-tools deploy --only hosting:staging --non-interactive --token "${{ secrets.FIREBASE_TOKEN }}"
