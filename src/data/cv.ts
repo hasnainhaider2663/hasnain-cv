@@ -48,7 +48,7 @@ export const roles: Role[] = [
     company: 'Altar.io',
     title: 'Senior Full Stack Developer',
     period: 'Jul 2025 – Present',
-    tag: 'Full Stack',
+    tag: 'Senior Full Stack',
     points: [
       'Played a key role in 5 projects: fintech, AI e-commerce, inventory management and healthcare social app. 338 pull requests and 435 tickets in 13 months, and code reviewer of record on 311 teammate PRs.',
       'Built a storefront-styling agent (OpenCode SDK) with structured JSON output; designed the per-session cost instrumentation adopted as the project’s go/no-go business metric.',
