@@ -251,6 +251,28 @@
     color: var(--bg);
   }
 
+  .portrait-lock {
+    display: none;
+  }
+
+  @media (max-width: 900px) and (orientation: landscape) {
+    .portrait-lock {
+      position: fixed;
+      inset: 0;
+      background: var(--fg);
+      color: var(--bg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      text-align: center;
+      padding: 2rem;
+    }
+    .portrait-lock svg { width: 80px; height: 80px; margin-bottom: 1rem; }
+    .portrait-lock p { font-size: 1.25rem; font-weight: 600; }
+  }
+
   .paper-panel {
     background: var(--surface);
     border: 1px solid color-mix(in srgb, var(--border) 18%, transparent);
