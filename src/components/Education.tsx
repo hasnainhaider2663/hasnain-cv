@@ -21,6 +21,7 @@ function PerforationRail({ side }: { side: 'left' | 'right' }) {
 }
 
 export default function Education() {
+  const { t } = useTranslation()
   const [revealed, setRevealed] = useState(false)
 
   const cells = useMemo(
