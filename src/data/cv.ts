@@ -9,13 +9,17 @@ export const profile = {
   upwork: 'https://www.upwork.com/freelancers/~01af2bec7f4082f911',
   experienceYears: 11,
   blurb:
-    'Full stack engineer who ships responsive, performant platforms and mobile apps. Eleven years across Next.js, React, Angular and Node — from startup strategy to enterprise scale.',
+    "Full stack engineer who ships responsive, performant platforms and mobile apps. Eleven years across Next.js, React, Angular and Node — from startup strategy to enterprise scale, building and evaluating production LLM systems along the way.",
 }
 
 export const highlights: { title: string; body: string }[] = [
   {
-    title: '338 PRs · 435 tickets in the last year',
-    body: 'Shipped 338 pull requests and completed 435 tickets in the last year.',
+    title: 'Expert in web development — 11 years',
+    body: 'Next.js, React, Angular and Node.js with SQL (Postgres, MSSQL, MySQL) and NoSQL (MongoDB) databases, on Azure, AWS and Firebase.',
+  },
+  {
+    title: 'Production LLM systems + 30+ data visualizations',
+    body: 'Built and evaluated production LLM systems, and delivered 30+ data visualizations for a multi-tenant fintech analytics platform.',
   },
   {
     title: 'Tech Lead',
@@ -26,12 +30,12 @@ export const highlights: { title: string; body: string }[] = [
     body: 'Provided technical leadership and strategy for multiple startups, working directly with leadership.',
   },
   {
-    title: '11 years across web, mobile and backend',
-    body: 'Expert in Next.js, React, Angular and Node.js with SQL and NoSQL databases across Azure, AWS and Firebase.',
+    title: 'Strong communication & interpersonal skills',
+    body: 'Two-way communication with clients and leadership across every engagement.',
   },
   {
-    title: 'Can-do attitude',
-    body: 'My biggest asset is my can-do attitude, which I\'ve always had since I got into the field.',
+    title: 'Judicious use of AI',
+    body: 'Planning carefully with AI and treating model output with a healthy level of skepticism based on experience.',
   },
 ]
 
