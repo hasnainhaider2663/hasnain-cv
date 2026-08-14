@@ -48,9 +48,9 @@ export const roles: Role[] = [
     company: 'Altar.io',
     title: 'Senior Full Stack Developer',
     period: 'Jul 2025 – Present',
-    tag: 'Product Engineering',
+    tag: 'Full Stack',
     points: [
-      'Delivered product engineering across five client engagements — fintech analytics, e-commerce, inventory management, healthcare social and proptech. 338 PRs and 435 tickets in 13 months; code reviewer of record on 311 teammate PRs.',
+      'Played a key role in 5 projects: fintech, AI e-commerce, inventory management and healthcare social app. 338 pull requests and 435 tickets in 13 months, and code reviewer of record on 311 teammate PRs.',
       'Built a storefront-styling agent (OpenCode SDK) with structured JSON output; designed the per-session cost instrumentation adopted as the project’s go/no-go business metric.',
       'A controlled model evaluation cut projected inference costs by 41% while improving latency.',
       'Delivered 30+ data visualizations and a dynamic form engine that eliminated custom forms for 90 API endpoints, cutting development time significantly.',
@@ -64,7 +64,7 @@ export const roles: Role[] = [
   {
     company: 'Sabeelee',
     title: 'Tech Lead',
-    period: 'Dec 2023 – Mar 2025',
+    period: 'Dec 2023 – Jul 2025',
     tag: 'Startup · Team Lead',
     points: [
       'Led technical strategy and development for a community engagement platform using React/Next.js; listed the PWA on the iOS App Store.',
