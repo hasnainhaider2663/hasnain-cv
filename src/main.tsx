@@ -4,6 +4,9 @@ import './index.css'
 import App from './App.tsx'
 import './lib/firebase'
 import './i18n'
+import { initClarity } from './lib/clarity'
+
+initClarity()
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
