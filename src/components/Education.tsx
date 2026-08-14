@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react'
 import { MousePointerClick, Sparkles } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 import { Reveal } from './ui'
 import LoaderRickshaw from './LoaderRickshaw'
 
@@ -43,37 +44,35 @@ export default function Education() {
       <div className="mx-auto max-w-6xl px-6 py-8 sm:px-10 md:px-16 md:py-12 lg:py-16">
         <Reveal>
           <div className="text-center">
-            <span className="font-mono text-[10px] sm:text-[11px] lg:text-[12px] tracking-[0.35em] opacity-60">REEL 06 · FUN FACT · TAKE 01</span>
-            <h2 className="display-type mt-1 text-xl sm:text-2xl lg:text-3xl xl:text-4xl text-accent">FUN FACT.</h2>
+            <span className="font-mono text-[10px] sm:text-[11px] lg:text-[12px] tracking-[0.35em] opacity-60">{t('education.reelTitle')}</span>
+            <h2 className="display-type mt-1 text-xl sm:text-2xl lg:text-3xl xl:text-4xl text-accent">{t('education.funFactTitle')}</h2>
           </div>
         </Reveal>
 
         <Reveal delay={0.1} className="mt-5 md:mt-6">
           <div className="border-brutal paper-panel relative overflow-hidden p-3 sm:p-4 md:p-5 lg:p-6">
-            <span aria-hidden className="absolute left-4 top-4 font-mono text-[10px] tracking-[0.2em] opacity-50">● REC</span>
-            <span aria-hidden className="absolute right-4 top-4 font-mono text-[10px] tracking-[0.2em] opacity-50">SCENE 01</span>
+            <span aria-hidden className="absolute left-4 top-4 font-mono text-[10px] tracking-[0.2em] opacity-50">{t('education.recLabel')}</span>
+            <span aria-hidden className="absolute right-4 top-4 font-mono text-[10px] tracking-[0.2em] opacity-50">{t('education.sceneLabel')}</span>
 
             <div className={`transition-[filter,transform] duration-1000 ${revealed ? 'rise-in-imax' : 'pixel-crumble pointer-events-none select-none'}`}>
               <div className="flex flex-col items-center text-center">
                 <Sparkles size={20} strokeWidth={2} className="text-accent" />
-                <blockquote className="mt-3 max-w-4xl font-display text-2xl leading-[1.1] text-cobalt text-balance sm:text-4xl lg:text-5xl">
-                  &ldquo;I sometimes had to hang off a rickshaw to get to university.&rdquo;
-                </blockquote>
+                <blockquote className="mt-3 max-w-4xl font-display text-2xl leading-[1.1] text-cobalt text-balance sm:text-4xl lg:text-5xl">{t('education.quote')}</blockquote>
               </div>
 
               <div className="mx-auto mt-5 max-w-4xl border border-border/20 bg-[#efe8dc] p-4 sm:p-5 md:p-6">
                 <LoaderRickshaw className="mx-auto h-auto w-full max-w-2xl" />
                 <p className="mt-3 text-center font-mono text-[11px] tracking-[0.18em] text-[#3a3f45]">
-                  That&apos;s me.
+                  {t('education.quoteAttribution')}
                 </p>
               </div>
 
               <div className="mt-5 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 font-mono text-[11px] tracking-[0.2em] text-fg/80">
-                <span>ISLAMABAD · COMSATS</span>
+                <span>{t('education.location')}</span>
                 <span aria-hidden>·</span>
-                <span>LOADER RICKSHAW</span>
+                <span>{t('education.vehicle')}</span>
                 <span aria-hidden>·</span>
-                <span>~7 MINUTES TO CAMPUS</span>
+                <span>{t('education.travelTime')}</span>
               </div>
             </div>
 
@@ -101,9 +100,9 @@ export default function Education() {
                 >
                   <span className="border-2 border-fg bg-bg text-fg px-6 py-2.5 font-mono text-sm font-bold tracking-wider uppercase transition-colors hover:bg-accent hover:border-accent hover:text-fg">
                     <MousePointerClick size={16} className="mr-2 inline" strokeWidth={2} />
-                    Click to roll the reel
+                    {t('education.ctaLabel')}
                   </span>
-                  <span className="font-mono text-[11px] tracking-[0.3em] text-fg/80 uppercase">[ one frame, one story ]</span>
+                  <span className="font-mono text-[11px] tracking-[0.3em] text-fg/80 uppercase">{t('education.ctaSubLabel')}</span>
                 </button>
               </div>
             )}
