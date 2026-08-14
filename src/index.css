@@ -255,7 +255,8 @@
     display: none;
   }
 
-  @media (max-width: 900px) and (orientation: landscape) {
+  @media (orientation: landscape) and (hover: none) and (pointer: coarse),
+         (orientation: landscape) and (max-height: 500px) {
     .portrait-lock {
       position: fixed;
       inset: 0;
