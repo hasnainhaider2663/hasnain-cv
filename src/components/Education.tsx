@@ -33,7 +33,7 @@ export default function Education() {
   )
 
   return (
-    <section id="education" className="relative overflow-hidden ink-block">
+    <section id="education" className="relative flex h-[90svh] w-full items-center justify-center overflow-hidden ink-block scroll-mt-16">
       <div aria-hidden className="absolute inset-x-0 top-0 z-20 h-3 bg-accent" />
       <div aria-hidden className="absolute inset-x-0 bottom-0 z-20 h-3 bg-accent" />
 
